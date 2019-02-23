@@ -1,6 +1,6 @@
 ## README
 
-### Waffle Project Board
+### Github Project Board
 
 https://github.com/ryan-mcneil/inspire/projects/1
 
