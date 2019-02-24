@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
   get '/interests', to: 'interests#index'
+  post '/interests', to: 'interests#create'
 
 end

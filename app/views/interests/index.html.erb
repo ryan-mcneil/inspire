@@ -6,3 +6,8 @@
     </div>
   <% end %>
 </div>
+<%= form_for @interest do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %>
+  <%= f.submit "+" %>
+<% end %>
