@@ -19,6 +19,7 @@ describe 'A user' do
       click_on "X"
     end
 
+    expect(page).to have_content "#{i1.name.titleize} has been successfully deleted"
     within '.interests' do
       expect(page).to_not have_content i1.name
       expect(page).to have_content i2.name

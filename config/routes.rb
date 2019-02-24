@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   get '/interests', to: 'interests#index'
   post '/interests', to: 'interests#create'
+  delete '/interests/:id', to: 'interests#destroy', as: :interest
 
 end
