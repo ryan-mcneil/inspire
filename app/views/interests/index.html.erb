@@ -1,0 +1,8 @@
+<h2>My Interests</h2>
+<div class="interests">
+  <% @interests.each do |interest| %>
+    <div id="interest-<%= interest.id %>">
+      <p><%= interest.name %></p>
+    </div>
+  <% end %>
+</div>

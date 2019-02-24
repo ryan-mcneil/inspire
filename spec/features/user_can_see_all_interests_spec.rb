@@ -16,7 +16,7 @@ describe 'A User' do
     expect(current_path).to eq('/interests')
 
     expect(page).to have_content "My Interests"
-    within '#interests' do
+    within '.interests' do
       expect(page).to have_content i1.name
       expect(page).to have_content i2.name
       expect(page).to have_content i3.name
