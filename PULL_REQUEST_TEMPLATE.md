@@ -1,4 +1,4 @@
-## README
+## INSPIRE
 
 ### Github Project Board
 
