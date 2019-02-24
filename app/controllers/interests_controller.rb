@@ -21,12 +21,8 @@ class InterestsController < ApplicationController
 
   def destroy
     interest = Interest.find_by_id(params[:id])
-    if interest
-      interest.delete
-      redirect_to '/interests', notice: "#{interest.name.titleize} has been successfully deleted"
-    else
-      redirect_to '/interests', notice: "An issue has occured"
-    end
+    interest.delete
+    redirect_to '/interests', notice: "#{interest.name.titleize} has been successfully deleted"
   end
 
   private
