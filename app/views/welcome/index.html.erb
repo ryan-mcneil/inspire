@@ -3,13 +3,13 @@
 <%= link_to "Inspire me!", root_path(inspire: true)%>
 <% if @facade %>
     <div id="recommendation">
-      <% if @facade.exists? %>
+      <% unless @facade.error %>
         <h2 id="how-about">How about...</h2>
         <h3 id="recommendation-name"><%= @facade.rec_name %></h3>
         <h4 id="recommendation-type">Type: <%= @facade.rec_type %></h4>
         <p id="recommendation-teaser"><%= @facade.rec_teaser %></p>
       <% else %>
-          <p>Try adding more interests for better recommendations!</p>
+          <p><%= @facade.error %></p>
       <% end %>
     </div>
 <% end %>

@@ -6,7 +6,11 @@ class TastediveService
 
   def get_recommendation
     recs = JSON.parse(results.body, symbolize_names: true)
-    randomize_results(recs)
+    if recs[:Similar]
+      randomize_results(recs)
+    else
+      recs
+    end
   end
 
   private

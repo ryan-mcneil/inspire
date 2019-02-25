@@ -4,8 +4,8 @@ class RecommendationFacade
     @user = user
   end
 
-  def exists?
-    rec
+  def error
+    rec[:error]
   end
 
   def rec_name
@@ -31,6 +31,8 @@ class RecommendationFacade
       random_interest = @user.interests.sample
       service = TastediveService.new(random_interest.name)
       service.get_recommendation
+    else
+      {error: "Try adding more interests for better recommendations!"}
     end
   end
 
