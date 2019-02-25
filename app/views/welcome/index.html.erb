@@ -1,5 +1,13 @@
 <%= link_to "Log Out", logout_path, method: :delete %>
 
-<button>Inspire me!</button>
+<%= button_to "Inspire me!", root_path(trigger: true), method: :get%>
+<% if @facade %>
+  <div id="recommendation">
+    <h2 id="how-about">How about...</h2>
+    <h3 id="recommendation-name"><%= @facade.rec_name %></h3>
+    <h4 id="recommendation-type">Type: <%= @facade.rec_type %></h4>
+    <p id="recommendation-teaser"><%= @facade.rec_teaser %></p>
+  </div>
+<% end %>
 
 <%= link_to "My Interests", interests_path %>
