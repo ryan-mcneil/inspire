@@ -19,6 +19,12 @@ class InterestsController < ApplicationController
     end
   end
 
+  def destroy
+    interest = Interest.find_by_id(params[:id])
+    interest.delete
+    redirect_to '/interests', notice: "#{interest.name.titleize} has been successfully deleted"
+  end
+
   private
 
   def interest_params

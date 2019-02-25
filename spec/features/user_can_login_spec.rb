@@ -12,11 +12,24 @@ describe 'a registered user' do
     click_on "Login"
 
     expect(current_path).to eq('/')
-
     expect(page).to have_content("Hi, #{user.username}!")
     expect(page).to have_button("Inspire me!")
     expect(page).to have_link("My Interests")
 
+  end
+
+  it 'can not login with incorrect email' do
+    user = User.create(email:'user@example.com', password:'password', username:'user')
+
+    visit '/'
+    expect(current_path).to eq('/login')
+
+    fill_in :email, with: "wrong@example.com"
+    fill_in :password, with: "wrongpassword"
+    click_on "Login"
+
+    expect(current_path).to eq('/login')
+    expect(page).to have_content("Password does not match username. Please try again.")
   end
 
   it 'can not login with incorrect credentials' do
@@ -30,9 +43,7 @@ describe 'a registered user' do
     click_on "Login"
 
     expect(current_path).to eq('/login')
-
     expect(page).to have_content("Password does not match username. Please try again.")
-
   end
 end
 
