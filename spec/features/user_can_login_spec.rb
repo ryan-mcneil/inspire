@@ -13,7 +13,7 @@ describe 'a registered user' do
 
     expect(current_path).to eq('/')
     expect(page).to have_content("Hi, #{user.username}!")
-    expect(page).to have_button("Inspire me!")
+    expect(page).to have_link("Inspire me!")
     expect(page).to have_link("My Interests")
 
   end

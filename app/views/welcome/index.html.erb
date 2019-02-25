@@ -1,5 +1,17 @@
 <%= link_to "Log Out", logout_path, method: :delete %>
 
-<button>Inspire me!</button>
+<%= link_to "Inspire me!", root_path(inspire: true)%>
+<% if @facade %>
+    <div id="recommendation">
+      <% if @facade.exists? %>
+        <h2 id="how-about">How about...</h2>
+        <h3 id="recommendation-name"><%= @facade.rec_name %></h3>
+        <h4 id="recommendation-type">Type: <%= @facade.rec_type %></h4>
+        <p id="recommendation-teaser"><%= @facade.rec_teaser %></p>
+      <% else %>
+          <p>Try adding more interests for better recommendations!</p>
+      <% end %>
+    </div>
+<% end %>
 
 <%= link_to "My Interests", interests_path %>

@@ -25,6 +25,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry'
   gem 'simplecov'
+  gem 'webmock'
 end
 
 group :development do
