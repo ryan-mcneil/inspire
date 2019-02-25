@@ -4,12 +4,6 @@ class RecommendationFacade
     @user = user
   end
 
-  def rec
-    random_interest = @user.interests.sample
-    service = TastediveService.new(random_interest.name)
-    service.get_recommendation
-  end
-
   def rec_name
     rec[:Name]
   end
@@ -22,4 +16,11 @@ class RecommendationFacade
     rec[:wTeaser]
   end
 
+  private
+
+  def rec
+    random_interest = @user.interests.sample
+    service = TastediveService.new(random_interest.name)
+    service.get_recommendation
+  end
 end
