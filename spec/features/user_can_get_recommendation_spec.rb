@@ -13,10 +13,6 @@ describe 'A user' do
 
     visit '/'
 
-    # within '#recommendation-name' do
-    #   expect(page).to_not have_content("")
-    # end
-
     click_on "Inspire me!"
 
     within '#recommendation' do
