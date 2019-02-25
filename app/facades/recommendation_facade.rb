@@ -19,8 +19,13 @@ class RecommendationFacade
   private
 
   def rec
+    @rec ||= get_rec
+  end
+
+  def get_rec
     random_interest = @user.interests.sample
     service = TastediveService.new(random_interest.name)
     service.get_recommendation
   end
+
 end
