@@ -4,6 +4,10 @@ class RecommendationFacade
     @user = user
   end
 
+  def exists?
+    rec
+  end
+
   def rec_name
     rec[:Name]
   end
@@ -23,9 +27,11 @@ class RecommendationFacade
   end
 
   def get_rec
-    random_interest = @user.interests.sample
-    service = TastediveService.new(random_interest.name)
-    service.get_recommendation
+    if @user.interests.any?
+      random_interest = @user.interests.sample
+      service = TastediveService.new(random_interest.name)
+      service.get_recommendation
+    end
   end
 
 end

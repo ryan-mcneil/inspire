@@ -35,6 +35,7 @@ describe 'A user' do
     end
 
   end
+
   it 'gets gives an error if a recommendation isnt found' do
     i1 = Interest.create(name: 'Red Hot', user: @user)
 
@@ -42,6 +43,18 @@ describe 'A user' do
     stub_request(:get, "https://tastedive.com/api/similar?q=Red Hot&info=1").
       with(body: {k: ENV['TASTEDIVE_API_KEY']}).
       to_return(body: File.read('spec/fixtures/tastedive_bad.json'))
+
+    visit '/'
+
+    click_on "Inspire me!"
+
+    within '#recommendation' do
+      expect(page).to have_content("Try adding more interests for better recommendations!")
+    end
+
+  end
+
+  it 'gets gives an error if no interests are listed' do
 
     visit '/'
 
