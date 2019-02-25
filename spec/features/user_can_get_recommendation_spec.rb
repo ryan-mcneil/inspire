@@ -32,7 +32,7 @@ describe 'A user' do
     end
 
     within '#recommendation-teaser' do
-      expect(page).to have_content("Foo Fighters is an American rock band, formed in Seattle, Washington, in 1994. It was founded by Nirvana drummer Dave Grohl as a one-man project following the dissolution of Nirvana after the suicide of Kurt Cobain. The group got its name from the UFOs and various aerial phenomena that were reported by Allied aircraft pilots in World War II, which were known collectively as \"foo fighters\".\nPrior to the release of Foo Fighters' 1995 debut album Foo Fighters, which featured Grohl")
+      expect(page).to have_content("Foo Fighters is an American rock band, formed in Seattle")
     end
 
   end
