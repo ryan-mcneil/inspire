@@ -23,7 +23,7 @@ jobs: # a collection of steps
       - run:
           name: specify version
           command: |
-            sudo gem uninstall bundler
+            echo | sudo gem uninstall bundler
             echo | sudo gem install bundler -v 2.0.1
 
       - run:
