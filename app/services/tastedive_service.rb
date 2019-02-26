@@ -6,10 +6,10 @@ class TastediveService
 
   def get_recommendation
     recs = JSON.parse(results.body, symbolize_names: true)
-    if recs[:Similar]
+    if recs[:Similar][:Results].any?
       randomize_results(recs)
     else
-      recs
+      {error: "Try adding more interests for better recommendations!"}
     end
   end
 
