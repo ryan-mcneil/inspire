@@ -1,18 +1,24 @@
 <div class='form'>
   <h2>New User Registration</h2>
   <%= form_for @user do |f| %>
-    <%= f.label :email %>:
-    <%= f.text_field :email %>
+  <div class="form-entry">
+    <%= f.label :email, class:"form-label"%>
+    <%= f.text_field :email, class:"form-field" %>
+  </div>
+  <div class="form-entry">
+    <%= f.label :username, class:"form-label" %>
+    <%= f.text_field :username, class:"form-field" %>
+  </div>
+  <div class="form-entry">
+    <%= f.label :password, class:"form-label" %>
+    <%= f.password_field :password, class:"form-field" %>
+  </div>
+  <div class="form-entry">
+    <%= f.label :password_confirmation, class:"form-label" %>
+    <%= f.password_field :password_confirmation, class:"form-field" %>
+  </div>
 
-    <br><%= f.label :username %>:
-    <%= f.text_field :username %>
-
-    <br><%= f.label :password %>:
-    <%= f.password_field :password %>
-
-    <br><%= f.label :password_confirmation %>:
-    <%= f.password_field :password_confirmation %>
-
-    <br><%= f.submit "Create Account" %>
+    <%= f.submit "Create Account", class:"form-submit" %>
   <% end %>
+  <%= link_to "Back to Login", login_path, class:"page-link"%>
 </div>
