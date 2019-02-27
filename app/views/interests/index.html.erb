@@ -1,17 +1,20 @@
-<h2>My Interests</h2>
-<div class="interests">
-  <% @interests.each do |interest| %>
-    <div id="interest-<%= interest.id %>">
-      <p><%= interest.name %></p>
-      <div id="delete-interest-<%= interest.id %>">
-        <%= button_to "X", interest_path(id: interest.id), method: :delete %>
+<div class="center">
+  <h2>My Interests</h2>
+  <div class="interests">
+    <% @interests.each do |interest| %>
+    <div class="interest" id="interest-<%= interest.id %> ">
+      <div class="interest-name"><%= interest.name %></div>
+      <div class="interest-x" id="delete-interest#{interest.id}">
+        <%= button_to "X", interest_path(id: interest.id), method: :delete, class:"interest-submit" %>
       </div>
     </div>
+    <% end %>
+  </div>
+  <%= form_for @interest do |f| %>
+  <%= f.text_field :name, placeholder: "Add Interest", class:"add-field" %>
+  <%= f.submit "+", class:"add-button" %>
   <% end %>
+
+  <%= link_to "< Back", root_path, class:"page-link" %>
+
 </div>
-<%= form_for @interest do |f| %>
-  <%= f.label :name %>:
-  <%= f.text_field :name %>
-  <%= f.submit "+" %>
-<% end %>
-<%= link_to "< Back", root_path %>

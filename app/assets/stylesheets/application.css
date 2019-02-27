@@ -57,3 +57,46 @@ h2 {
   text-decoration: none;
   color: #629460;
 }
+.add-field {
+  border: none;
+  width: 200px;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+.add-button {
+  font-size: 40px;
+  vertical-align: middle;
+  background: transparent;
+  border: none;
+  padding-bottom: 10px;
+}
+.center {
+  text-align: center;
+}
+.interests {
+  margin: 0 auto;
+  width: 60%;
+  margin-bottom: 20px;
+}
+.interest {
+  display: inline-block;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+.interest-name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.interest-x {
+  display: inline-block;
+}
+.interest-submit {
+  background: transparent;
+  border: none;
+  vertical-align: middle;
+
+}
