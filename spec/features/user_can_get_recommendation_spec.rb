@@ -18,19 +18,19 @@ describe 'A user' do
 
     click_on "Inspire me!"
 
-    within '#recommendation' do
+    within '.recommendation' do
       expect(page).to have_content("How about...")
     end
 
-    within '#recommendation-name' do
+    within '.recommendation-name' do
       expect(page).to have_content("Foo Fighters")
     end
 
-    within '#recommendation-type' do
+    within '.recommendation-type' do
       expect(page).to have_content("Type: Music")
     end
 
-    within '#recommendation-teaser' do
+    within '.recommendation-teaser' do
       expect(page).to have_content("Foo Fighters is an American rock band, formed in Seattle")
     end
 
@@ -48,7 +48,7 @@ describe 'A user' do
 
     click_on "Inspire me!"
 
-    within '#recommendation' do
+    within '.recommendation' do
       expect(page).to have_content("Try adding more interests for better recommendations!")
     end
 
@@ -65,7 +65,7 @@ describe 'A user' do
 
     click_on "Inspire me!"
 
-    within '#recommendation' do
+    within '.recommendation' do
       expect(page).to have_content("Rate limit exceeded, try again later")
     end
 
@@ -77,7 +77,7 @@ describe 'A user' do
 
     click_on "Inspire me!"
 
-    within '#recommendation' do
+    within '.recommendation' do
       expect(page).to have_content("Try adding more interests for better recommendations!")
     end
 
