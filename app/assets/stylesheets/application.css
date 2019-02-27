@@ -79,9 +79,8 @@ h2 {
   text-align: center;
 }
 .interests {
-  margin: 0 auto;
+  margin: 0 auto 20px;
   width: 60%;
-  margin-bottom: 20px;
 }
 .interest {
   display: inline-block;
@@ -101,5 +100,17 @@ h2 {
   background: transparent;
   border: none;
   vertical-align: middle;
+}
+.rec-container {
+  height: 400px;
+  margin: 0 auto;
+}
+.lower-links {
 
+}
+.inspire {
+  text-decoration: none;
+}
+.recommendation {
+  width: 60%;
 }
