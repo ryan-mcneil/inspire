@@ -23,7 +23,10 @@ class RecommendationFacade
   private
 
   def rec
-    @rec ||= get_rec
+    # @rec ||= get_rec
+    json = File.read("./app/assets/mock_data/tastedive_response.json")
+    recs = JSON.parse(json, symbolize_names: true)[:Similar][:Results]
+    recs.sample
   end
 
   def get_rec

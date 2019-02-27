@@ -1,17 +1,22 @@
-<%= link_to "Log Out", logout_path, method: :delete %>
-
-<%= link_to "Inspire me!", root_path(inspire: true)%>
-<% if @facade %>
-    <div id="recommendation">
+<div class="center">
+  <%= link_to "Inspire me!", root_path(inspire: true), class:"inspire"%>
+  <div class="rec-container">
+    <% if @facade %>
+    <div class="recommendation">
       <% unless @facade.error %>
-        <h2 id="how-about">How about...</h2>
-        <h3 id="recommendation-name"><%= @facade.rec_name %></h3>
-        <h4 id="recommendation-type">Type: <%= @facade.rec_type %></h4>
-        <p id="recommendation-teaser"><%= @facade.rec_teaser %></p>
+        <h2 class="how-about">How about...</h2>
+        <h3 class="recommendation-name"><%= @facade.rec_name %></h3>
+        <h4 class="recommendation-type">Type: <%= @facade.rec_type %></h4>
+        <p class="recommendation-teaser"><%= @facade.rec_teaser %></p>
       <% else %>
-          <p><%= @facade.error %></p>
+        <p><%= @facade.error %></p>
       <% end %>
     </div>
-<% end %>
+    <% end %>
+  </div>
+  <div class="lower-links">
+    <%= link_to "My Interests", interests_path, class:"page-link" %><br />
+    <%= link_to "Log Out", logout_path, method: :delete, class:"page-link" %>
+  </div>
 
-<%= link_to "My Interests", interests_path %>
+</div>
