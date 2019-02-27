@@ -60,9 +60,10 @@ h2 {
 .add-field {
   border: none;
   width: 200px;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   vertical-align: middle;
+  padding: 5px;
 
 }
 .add-button {
@@ -71,6 +72,7 @@ h2 {
   background: transparent;
   border: none;
   padding-bottom: 10px;
+
 }
 .center {
   text-align: center;
