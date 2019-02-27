@@ -23,14 +23,14 @@ class RecommendationFacade
   private
 
   def rec
-    # @rec ||= get_rec
-    json = File.read("./app/assets/mock_data/tastedive_response.json")
-    recs = JSON.parse(json, symbolize_names: true)[:Similar][:Results]
-    recs.sample
+    @rec ||= get_rec
   end
 
   def get_rec
     if @user.interests.any?
+      # json = File.read("./app/assets/mock_data/tastedive_response.json")
+      # recs = JSON.parse(json, symbolize_names: true)[:Similar][:Results]
+      # recs.sample
       random_interest = @user.interests.sample
       service = TastediveService.new(random_interest.name)
       service.get_recommendation

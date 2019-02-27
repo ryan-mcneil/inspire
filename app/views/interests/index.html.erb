@@ -4,7 +4,7 @@
     <% @interests.each do |interest| %>
     <div class="interest" id="interest-<%= interest.id %> ">
       <div class="interest-name"><%= interest.name %></div>
-      <div class="interest-x" id="delete-interest#{interest.id}">
+      <div class="interest-x" id="delete-interest-<%=interest.id%>">
         <%= button_to "X", interest_path(id: interest.id), method: :delete, class:"interest-submit" %>
       </div>
     </div>
